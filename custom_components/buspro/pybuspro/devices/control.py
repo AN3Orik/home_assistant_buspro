@@ -39,6 +39,11 @@ class _Control:
             operate_code = OperateCode.ReadStatusOfUniversalSwitch
             payload = [control.switch_number]
 
+        elif type(control) == _CoverControl:
+            operate_code = OperateCode.CurtainSwitchControl
+            payload = [control.channel_number, control.channel_status.value]
+
+
         elif type(control) == _ReadSensorStatus:
             operate_code = OperateCode.ReadSensorStatus
             payload = []
@@ -99,6 +104,12 @@ class _SingleChannelControl(_Control):
         self.running_time_minutes = None
         self.running_time_seconds = None
 
+class _CoverControl(_Control):
+    def __init__(self, buspro):
+        super().__init__(buspro)
+
+        self.channel_number = None
+        self.channel_status = None
 
 class _SceneControl(_Control):
     def __init__(self, buspro):

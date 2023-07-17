@@ -44,6 +44,10 @@ class OnOffStatus(Enum):
     OFF = 0
     ON = 1
 
+class CoverStatus(Enum):
+    STOP = 0
+    OPEN = 1
+    CLOSE = 2
 
 class TemperatureType(Enum):
     Celsius = 0
@@ -73,6 +77,11 @@ class OperateCode(Enum):
     ReadStatusOfUniversalSwitch = b'\xE0\x18'
     ReadStatusOfUniversalSwitchResponse = b'\xE0\x19'
     BroadcastStatusOfUniversalSwitch = b'\xE0\x17'
+
+    CurtainSwitchControl = b'\xE3\xE0'
+    CurtainSwitchControlResponse = b'\xE3\xE1'
+    CurtainSwitchStatus = b'\xE3\xE2'
+    CurtainSwitchStatusResponse = b'\xE3\xE3'
 
     BroadcastSensorStatusResponse = b'\x16\x44'
     ReadSensorStatus = b'\x16\x45'
