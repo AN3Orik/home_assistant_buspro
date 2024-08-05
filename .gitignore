@@ -165,3 +165,4 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+/custom_components/buspro/.idea

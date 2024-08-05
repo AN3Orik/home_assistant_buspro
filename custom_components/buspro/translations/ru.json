@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Настройки Buspro шлюза",
+        "description": "Введите IP адрес и порт шлюза Buspro.",
+        "data": {
+          "host": "IP адрес",
+          "port": "Номер порта"
+        }
+      }
+    },
+    "error": {
+      "unknown": "Произошла ошибка."
+    }
+  }
+}
